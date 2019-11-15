@@ -1,0 +1,27 @@
+enum Permission {
+  ADMIN
+  USER
+  RESTAURANTCREATE
+  RESTAURANTUPDATE
+  RESTAURANTDELETE
+}
+
+type User {
+  id: ID! @unique @id
+  username: String! @unique
+  password: String!
+  permissions:[Permission] @scalarList(strategy:RELATION)
+  createdAt: DateTime! @createdAt
+  updatedAt: DateTime! @updatedAt
+}
+
+type Restaurant {
+  id: ID! @unique @id
+  name:String!
+  description:String!
+  image:String!
+  location: String!
+  createdAt: DateTime! @createdAt
+  updatedAt: DateTime! @updatedAt
+  user:User!
+}

@@ -1,0 +1,31 @@
+{
+  "devFiles": [
+    "static/development/dll/dll_4be4a16113a63f46d1ae.js"
+  ],
+  "pages": {
+    "/_app": [
+      "static/runtime/webpack.js",
+      "static/runtime/main.js"
+    ],
+    "/_error": [
+      "static/runtime/webpack.js",
+      "static/runtime/main.js"
+    ],
+    "/add-restaurant": [
+      "static/runtime/webpack.js",
+      "static/runtime/main.js"
+    ],
+    "/restaurant": [
+      "static/runtime/webpack.js",
+      "static/runtime/main.js"
+    ],
+    "/restaurants": [
+      "static/runtime/webpack.js",
+      "static/runtime/main.js"
+    ],
+    "/signup": [
+      "static/runtime/webpack.js",
+      "static/runtime/main.js"
+    ]
+  }
+}

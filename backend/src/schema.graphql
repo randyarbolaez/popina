@@ -1,0 +1,37 @@
+# import * from './generated/prisma.graphql'
+
+type SuccessMessage {
+  message: String
+}
+
+type Mutation {
+  createRestaurant(
+    name: String
+    description: String
+    image: String
+    location: String
+  ): Restaurant!
+
+  updateRestaurant(
+    id: ID!
+    name: String
+    description: String
+    location: String
+  ): Restaurant!
+  deleteRestaurant(id: ID!): Restaurant
+  signup(username: String!, password: String!): User!
+  signin(username: String!, password: String!): User!
+  signout: SuccessMessage
+}
+
+type Query {
+  restaurants(
+    where: RestaurantWhereInput
+    orderBy: RestaurantOrderByInput
+    skip: Int
+    first: Int
+  ): [Restaurant]!
+  restaurant(where: RestaurantWhereUniqueInput!): Restaurant
+  restaurantsConnection(where: RestaurantWhereInput): RestaurantConnection!
+  me: User
+}
