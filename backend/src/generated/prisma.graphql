@@ -1,5 +1,5 @@
-# source: https://us1.prisma.sh/randy-arbolaez/popina/dev
-# timestamp: Fri Nov 15 2019 09:25:34 GMT-0500 (EST)
+# source: https://propina-prod-a75533372e.herokuapp.com/propina-service-prod/prod
+# timestamp: Fri Dec 06 2019 23:03:23 GMT-0500 (Eastern Standard Time)
 
 type AggregateRestaurant {
   count: Int!
