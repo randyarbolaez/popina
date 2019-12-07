@@ -179,13 +179,19 @@ function (_Component) {
             lineNumber: 62
           },
           __self: this
-        }, "Sign In")), me && react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(_Signout__WEBPACK_IMPORTED_MODULE_10__["default"], {
+        }, "Sign In")), me && react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("div", {
           __source: {
             fileName: _jsxFileName,
             lineNumber: 66
           },
           __self: this
-        }));
+        }, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(_Signout__WEBPACK_IMPORTED_MODULE_10__["default"], {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 67
+          },
+          __self: this
+        })));
       });
     }
   }]);
@@ -435,15 +441,17 @@ User.PropTypes = {
 /*!*******************!*\
   !*** ./config.js ***!
   \*******************/
-/*! exports provided: endpoint, perPage */
+/*! exports provided: endpoint, prodEndpoint, perPage */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "endpoint", function() { return endpoint; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "prodEndpoint", function() { return prodEndpoint; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "perPage", function() { return perPage; });
 // This is client side config only - don't put anything in here that shouldn't be public!
 var endpoint = "http://localhost:4444";
+var prodEndpoint = "https://popina-yoga-prod.herokuapp.com/";
 var perPage = 4;
 
 /***/ }),
@@ -2357,7 +2365,7 @@ var unitlessKeys = {
 /*!*****************************************************!*\
   !*** ./node_modules/apollo-boost/lib/bundle.esm.js ***!
   \*****************************************************/
-/*! exports provided: ApolloClient, ObservableQuery, NetworkStatus, isApolloError, ApolloError, FetchType, Observable, getOperationName, createOperation, makePromise, toPromise, fromPromise, fromError, empty, from, split, concat, ApolloLink, execute, InMemoryCache, defaultDataIdFromObject, StoreReader, assertIdValue, WriteError, enhanceErrorWithDocument, StoreWriter, HeuristicFragmentMatcher, IntrospectionFragmentMatcher, ObjectCache, defaultNormalizedCacheFactory, HttpLink, gql, default */
+/*! exports provided: HttpLink, gql, default, ApolloClient, ObservableQuery, NetworkStatus, isApolloError, ApolloError, FetchType, Observable, getOperationName, createOperation, makePromise, toPromise, fromPromise, fromError, empty, from, split, concat, ApolloLink, execute, InMemoryCache, defaultDataIdFromObject, StoreReader, assertIdValue, WriteError, enhanceErrorWithDocument, StoreWriter, HeuristicFragmentMatcher, IntrospectionFragmentMatcher, ObjectCache, defaultNormalizedCacheFactory */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

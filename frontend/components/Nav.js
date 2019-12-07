@@ -63,7 +63,9 @@ class Nav extends Component {
               </Link>
             }
             {me &&
-              <Signout />
+              <div>
+                <Signout />
+              </div>
             }
 
           </Container>

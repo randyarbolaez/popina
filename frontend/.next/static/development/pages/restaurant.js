@@ -1,5 +1,60 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["static/development/pages/restaurant.js"],{
 
+/***/ "./components/AddMenu.js":
+/*!*******************************!*\
+  !*** ./components/AddMenu.js ***!
+  \*******************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/classCallCheck */ "./node_modules/@babel/runtime-corejs2/helpers/esm/classCallCheck.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/createClass */ "./node_modules/@babel/runtime-corejs2/helpers/esm/createClass.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/possibleConstructorReturn */ "./node_modules/@babel/runtime-corejs2/helpers/esm/possibleConstructorReturn.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/getPrototypeOf */ "./node_modules/@babel/runtime-corejs2/helpers/esm/getPrototypeOf.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/inherits */ "./node_modules/@babel/runtime-corejs2/helpers/esm/inherits.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_5__);
+
+
+
+
+
+var _jsxFileName = "/Users/randyarbolaez/code/job-application-projects/popina/frontend/components/AddMenu.js";
+
+
+var AddMenu =
+/*#__PURE__*/
+function (_Component) {
+  Object(_babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_4__["default"])(AddMenu, _Component);
+
+  function AddMenu() {
+    Object(_babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__["default"])(this, AddMenu);
+
+    return Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__["default"])(this, Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__["default"])(AddMenu).apply(this, arguments));
+  }
+
+  Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(AddMenu, [{
+    key: "render",
+    value: function render(props) {
+      return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 6
+        },
+        __self: this
+      }, this.props.id);
+    }
+  }]);
+
+  return AddMenu;
+}(react__WEBPACK_IMPORTED_MODULE_5__["Component"]);
+
+/* harmony default export */ __webpack_exports__["default"] = (AddMenu);
+
+/***/ }),
+
 /***/ "./components/SingleRestaurant.js":
 /*!****************************************!*\
   !*** ./components/SingleRestaurant.js ***!
@@ -24,6 +79,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! next/head */ "./node_modules/next-server/dist/lib/head.js");
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony import */ var _components_AddMenu__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../components/AddMenu */ "./components/AddMenu.js");
 
 
 
@@ -108,6 +164,7 @@ function _templateObject() {
 
 
 
+
 var SingleRestaurantStyles = styled_components__WEBPACK_IMPORTED_MODULE_10__["default"].div(_templateObject());
 var RestaurantName = styled_components__WEBPACK_IMPORTED_MODULE_10__["default"].h2(_templateObject2());
 var RestaurantMenu = styled_components__WEBPACK_IMPORTED_MODULE_10__["default"].h2(_templateObject3());
@@ -139,7 +196,7 @@ function (_Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 61
+          lineNumber: 63
         },
         __self: this
       }, function (_ref) {
@@ -149,21 +206,21 @@ function (_Component) {
         if (error) return react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("h1", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 65
+            lineNumber: 67
           },
           __self: this
         }, "Error");
         if (loading) return react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("h1", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 66
+            lineNumber: 68
           },
           __self: this
         }, "Loading...");
         if (!data.restaurant) return react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("h1", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 67
+            lineNumber: 69
           },
           __self: this
         }, "No Restaurant Found for ", _this.props.id);
@@ -171,31 +228,31 @@ function (_Component) {
         return react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(SingleRestaurantStyles, {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 69
+            lineNumber: 71
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(next_head__WEBPACK_IMPORTED_MODULE_11___default.a, {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 70
+            lineNumber: 72
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("title", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 71
+            lineNumber: 73
           },
           __self: this
         }, "Popina | ", restaurant.name)), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("div", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 73
+            lineNumber: 75
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(RestaurantName, {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 74
+            lineNumber: 76
           },
           __self: this
         }, restaurant.name), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(RestaurantImg, {
@@ -203,25 +260,32 @@ function (_Component) {
           alt: restaurant.name,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 75
+            lineNumber: 77
           },
           __self: this
         }), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(RestaurantMenu, {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 76
+            lineNumber: 78
           },
           __self: this
-        }, "Menu"), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(RestaurantLocation, {
+        }, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(_components_AddMenu__WEBPACK_IMPORTED_MODULE_12__["default"], {
+          restaurantId: _this.props.id,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 77
+            lineNumber: 78
+          },
+          __self: this
+        })), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(RestaurantLocation, {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 79
           },
           __self: this
         }, restaurant.location), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(RestaurantDescription, {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 78
+            lineNumber: 80
           },
           __self: this
         }, restaurant.description)));
@@ -24700,7 +24764,7 @@ var Restaurant = function Restaurant(props) {
 
 /***/ }),
 
-/***/ 2:
+/***/ 4:
 /*!*********************************************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2Frestaurant&absolutePagePath=%2FUsers%2Frandyarbolaez%2Fcode%2Fjob-application-projects%2Fpopina%2Ffrontend%2Fpages%2Frestaurant.js ***!
   \*********************************************************************************************************************************************************************************/
@@ -24723,5 +24787,5 @@ module.exports = dll_6b5a3ee2368b61971f52;
 
 /***/ })
 
-},[[2,"static/runtime/webpack.js"]]]);
+},[[4,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=restaurant.js.map

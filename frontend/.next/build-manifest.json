@@ -11,19 +11,11 @@
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ],
-    "/add-restaurant": [
+    "/add-menu": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ],
     "/restaurant": [
-      "static/runtime/webpack.js",
-      "static/runtime/main.js"
-    ],
-    "/restaurants": [
-      "static/runtime/webpack.js",
-      "static/runtime/main.js"
-    ],
-    "/signup": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ]

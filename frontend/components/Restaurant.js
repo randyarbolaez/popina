@@ -4,8 +4,6 @@ import styled from 'styled-components';
 import Link from 'next/link';
 import DeleteRestaurant from './DeleteRestaurant';
 import UpdateRestaurant from './UpdateRestaurant';
-// import { CURRENT_USER_QUERY } from './User';
-// import { Query } from 'react-apollo';
 import User from './User';
 
 const Flex = styled.div`
