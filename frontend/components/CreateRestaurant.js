@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
-import { Mutation } from 'react-apollo';
-import gql from 'graphql-tag';
-import Router from 'next/router';
-import styled from 'styled-components';
+import React, { Component } from "react";
+import { Mutation } from "react-apollo";
+import gql from "graphql-tag";
+import Router from "next/router";
+import styled from "styled-components";
 
 const CREATE_RESTAURANT_MUTATION = gql`
   mutation CREATE_RESTAURANT_MUTATION(
@@ -12,10 +12,10 @@ const CREATE_RESTAURANT_MUTATION = gql`
     $image: String
   ) {
     createRestaurant(
-      name:$name
-      location:$location
-      description:$description
-      image:$image
+      name: $name
+      location: $location
+      description: $description
+      image: $image
     ) {
       id
     }
@@ -23,49 +23,49 @@ const CREATE_RESTAURANT_MUTATION = gql`
 `;
 
 const Form = styled.form`
-  display:flex;
-  justify-content:center;
+  display: flex;
+  justify-content: center;
   fieldset {
-    border-color:#f4976c;
+    border-color: #f4976c;
     box-shadow: 10px 0px 5px 5px grey;
-    border-bottom:none;
-    display:flex;
-    padding:5%;
-    margin:0 4% 4% 4%;
+    border-bottom: none;
+    display: flex;
+    padding: 5%;
+    margin: 0 4% 4% 4%;
   }
-  label{
-    font-size:3.4rem;
-    color:#537E80;
+  label {
+    font-size: 3.4rem;
+    color: #537e80;
   }
   input {
-      border: none;
-      border-bottom: 2px dashed #9FCACC;
-      background: #D2FDFF;
+    border: none;
+    border-bottom: 2px dashed #9fcacc;
+    background: #d2fdff;
   }
 
-  textarea{
-      resize: none;
+  textarea {
+    resize: none;
   }
 
   button {
-    background:#ECFFFF;
-    border:none;
-    border-radius:5%;
-    font-size:3.5rem;
-    font-family:'Porton';
-    color:#F4976C;
+    background: #ecffff;
+    border: none;
+    border-radius: 5%;
+    font-size: 3.5rem;
+    font-family: "Porton";
+    color: #f4976c;
   }
 
-  button:hover{
-    background:#F4976C;
-    color:#ECFFFF;
+  button:hover {
+    background: #f4976c;
+    color: #ecffff;
   }
 `;
 
 const Title = styled.h2`
-  display:flex;
-  justify-content:center;
-  color:#F4976C;
+  display: flex;
+  justify-content: center;
+  color: #f4976c;
 `;
 
 class CreateRestaurant extends Component {
@@ -73,29 +73,32 @@ class CreateRestaurant extends Component {
     name: "",
     location: "",
     description: "",
-    image: "",
-  }
+    image: ""
+  };
 
-  handleChange = (e) => {
+  handleChange = e => {
     const { name, type, value } = e.target;
-    this.setState({ [name]: value })
-  }
+    this.setState({ [name]: value });
+  };
 
   uploadFile = async e => {
-    console.log('Uploading file...')
+    console.log("Uploading file...");
     const files = e.target.files;
     const data = new FormData();
-    data.append('file', files[0]);
-    data.append('upload_preset', 'popina');
+    data.append("file", files[0]);
+    data.append("upload_preset", "popina");
 
-    const res = await fetch('https://api.cloudinary.com/v1_1/dx3i4rcnz/image/upload', {
-      method: 'POST',
-      body: data
-    });
+    const res = await fetch(
+      "https://api.cloudinary.com/v1_1/dx3i4rcnz/image/upload",
+      {
+        method: "POST",
+        body: data
+      }
+    );
     const file = await res.json();
-    console.log(file)
-    this.setState({ image: file.secure_url })
-  }
+    console.log(file);
+    this.setState({ image: file.secure_url });
+  };
 
   render() {
     return (
@@ -103,21 +106,21 @@ class CreateRestaurant extends Component {
         {(createRestaurant, { error, loading }) => (
           <div>
             <Title>Add Your Restaurant</Title>
-            <Form onSubmit={async e => {
-              e.preventDefault();
-              const res = await createRestaurant();
-              Router.push({
-                pathname: '/restaurant',
-                query: { id: res.data.createRestaurant.id }
-              })
-
-            }}>
+            <Form
+              onSubmit={async e => {
+                e.preventDefault();
+                const res = await createRestaurant();
+                Router.push({
+                  pathname: "/restaurant",
+                  query: { id: res.data.createRestaurant.id }
+                });
+              }}
+            >
               {error && <p>{error.message}</p>}
               <fieldset disabled={loading}>
-
                 <label htmlFor="file">
                   Restaurant StoreFront
-                <input
+                  <input
                     type="file"
                     id="file"
                     name="file"
@@ -128,7 +131,7 @@ class CreateRestaurant extends Component {
 
                 <label htmlFor="name">
                   Restaurant Name
-                <input
+                  <input
                     type="text"
                     id="name"
                     name="name"
@@ -141,7 +144,7 @@ class CreateRestaurant extends Component {
 
                 <label htmlFor="location">
                   Restaurant Location
-        <input
+                  <input
                     type="text"
                     id="location"
                     name="location"
@@ -154,14 +157,15 @@ class CreateRestaurant extends Component {
 
                 <label htmlFor="description">
                   Restaurant Description
-        <textarea
+                  <textarea
                     type="text"
                     id="description"
                     name="description"
                     placeholder="describe your restaurant in 50ish words or less"
                     maxLength="360"
                     required
-                    rows="5" cols="50"
+                    rows="5"
+                    cols="50"
                     value={this.state.description}
                     onChange={this.handleChange}
                   />
@@ -172,9 +176,9 @@ class CreateRestaurant extends Component {
           </div>
         )}
       </Mutation>
-    )
+    );
   }
 }
 
 export default CreateRestaurant;
-export { CREATE_RESTAURANT_MUTATION }
+export { CREATE_RESTAURANT_MUTATION };

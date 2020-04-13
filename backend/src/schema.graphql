@@ -22,7 +22,6 @@ type Mutation {
   signup(username: String!, password: String!): User!
   signin(username: String!, password: String!): User!
   signout: SuccessMessage
-  createMenu(dishName: String, image: String!, price: String): Menu!
 }
 
 type Query {
