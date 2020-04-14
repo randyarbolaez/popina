@@ -31,12 +31,12 @@ server.express.use(async (req, res, next) => {
 
 // Server started!
 server.start(
-  // {
-  //   cors: {
-  //     credentials: true,
-  //     origin: process.env.FRONTEND_URL
-  //   }
-  // },
+  {
+    cors: {
+      credentials: true,
+      origin: process.env.FRONTEND_URL,
+    },
+  },
   (details) => {
     console.log(`http://localhost:${details.port}`);
   }
