@@ -1,5 +1,5 @@
-#endpoint: ${env:PRISMA_ENDPOINT}
-endpoint: https://propina-prod-a75533372e.herokuapp.com/propina-service-prod/prod
+# endpoint: ${env:PRISMA_ENDPOINT}
+endpoint: ${env:PRISMA_PROD_ENDPOINT}
 datamodel: datamodel.prisma
 secret: ${env:PRISMA_SECRET}
 hooks:

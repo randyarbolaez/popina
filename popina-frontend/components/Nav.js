@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
-import Link from 'next/link';
-import styled from 'styled-components';
-import User from './User';
-import Signout from './Signout'
+import React, { Component } from "react";
+import Link from "next/link";
+import styled from "styled-components";
+import User from "./User";
+import Signout from "./Signout";
 
 const Container = styled.div`
   /* -webkit-clip-path: polygon(0 0, 100% 0, 100% 93%, 0 100%); */
@@ -12,7 +12,7 @@ const Container = styled.div`
   background-color: #f4976c;
   display: flex;
   justify-content: space-around;
-  text-align:center;
+  text-align: center;
   padding: 2%;
   font-size: 2.7rem;
   a {
@@ -44,30 +44,24 @@ class Nav extends Component {
       <User>
         {({ data: { me } }) => (
           <Container>
-            {!me &&
-              <Link href="/signup">
-                <a>Sign Up</a>
+            {!me && (
+              <Link href="/">
+                <a>Sign Up/In</a>
               </Link>
-            }
-            {me &&
+            )}
+            {me && (
               <Link href="/add-restaurant">
                 <a>add restaurant</a>
               </Link>
-            }
+            )}
             <Link href="/restaurants">
               <a>Restaurants</a>
             </Link>
-            {!me &&
-              <Link href="/signup">
-                <a>Sign In</a>
-              </Link>
-            }
-            {me &&
+            {me && (
               <div>
                 <Signout />
               </div>
-            }
-
+            )}
           </Container>
         )}
       </User>

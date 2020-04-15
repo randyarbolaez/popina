@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 import { Mutation } from "react-apollo";
 import gql from "graphql-tag";
-import { CURRENT_USER_QUERY } from "./User";
 import styled from "styled-components";
+import Router from "next/router";
+
+import { CURRENT_USER_QUERY } from "./User";
 
 const SIGNIN_MUTATION = gql`
   mutation SIGNIN_MUTATION($username: String!, $password: String!) {
@@ -61,10 +63,10 @@ const FormSubTitle = styled.p`
 class Signin extends Component {
   state = {
     username: "",
-    password: ""
+    password: "",
   };
 
-  saveToState = e => {
+  saveToState = (e) => {
     this.setState({ [e.target.name]: e.target.value });
   };
 
@@ -79,10 +81,13 @@ class Signin extends Component {
           return (
             <form
               method="post"
-              onSubmit={async e => {
+              onSubmit={async (e) => {
                 e.preventDefault();
                 const res = await signup();
                 this.setState({ username: "", password: "" });
+                Router.push({
+                  pathname: "/restaurants",
+                });
               }}
             >
               <FieldSet disabled={loading}>
