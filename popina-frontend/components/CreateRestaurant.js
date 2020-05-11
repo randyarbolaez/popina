@@ -26,7 +26,7 @@ const Form = styled.form`
   display: flex;
   justify-content: center;
   fieldset {
-    border-color: #f4976c;
+    border-color: transparent;
     box-shadow: 10px 0px 5px 5px grey;
     border-bottom: none;
     display: flex;
@@ -40,7 +40,7 @@ const Form = styled.form`
   input {
     border: none;
     border-bottom: 2px dashed #9fcacc;
-    background: #d2fdff;
+    background: none;
   }
 
   textarea {
@@ -48,12 +48,18 @@ const Form = styled.form`
   }
 
   button {
-    background: #ecffff;
-    border: none;
-    border-radius: 5%;
-    font-size: 3.5rem;
-    font-family: "Porton";
-    color: #f4976c;
+    border: 1px solid #01142f;
+    border-top: none;
+    border-bottom-right-radius: 3vh;
+    border-top-right-radius: 3vh;
+    border-bottom-left-radius: 3vh;
+    border-top-left-radius: 3vh;
+    background: none;
+    /* border-radius: 30%; */
+    font-size: 1.5vmax;
+    /* font-family: "Porton"; */
+    color: #bdccff;
+    margin: auto;
   }
 
   button:hover {
@@ -65,7 +71,7 @@ const Form = styled.form`
 const Title = styled.h2`
   display: flex;
   justify-content: center;
-  color: #f4976c;
+  color: #0043a4;
 `;
 
 class CreateRestaurant extends Component {
@@ -73,15 +79,15 @@ class CreateRestaurant extends Component {
     name: "",
     location: "",
     description: "",
-    image: ""
+    image: "",
   };
 
-  handleChange = e => {
+  handleChange = (e) => {
     const { name, type, value } = e.target;
     this.setState({ [name]: value });
   };
 
-  uploadFile = async e => {
+  uploadFile = async (e) => {
     console.log("Uploading file...");
     const files = e.target.files;
     const data = new FormData();
@@ -92,7 +98,7 @@ class CreateRestaurant extends Component {
       "https://api.cloudinary.com/v1_1/dx3i4rcnz/image/upload",
       {
         method: "POST",
-        body: data
+        body: data,
       }
     );
     const file = await res.json();
@@ -107,12 +113,12 @@ class CreateRestaurant extends Component {
           <div>
             <Title>Add Your Restaurant</Title>
             <Form
-              onSubmit={async e => {
+              onSubmit={async (e) => {
                 e.preventDefault();
                 const res = await createRestaurant();
                 Router.push({
                   pathname: "/restaurant",
-                  query: { id: res.data.createRestaurant.id }
+                  query: { id: res.data.createRestaurant.id },
                 });
               }}
             >

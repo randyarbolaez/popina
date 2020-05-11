@@ -1,11 +1,10 @@
-import React, { Component } from 'react';
-import { Query } from 'react-apollo';
-import gql from 'graphql-tag';
-import styled from 'styled-components';
-import Restaurant from './Restaurant';
-import Pagination from './Pagination'
-import { perPage } from '../config';
-
+import React, { Component } from "react";
+import { Query } from "react-apollo";
+import gql from "graphql-tag";
+import styled from "styled-components";
+import Restaurant from "./Restaurant";
+import Pagination from "./Pagination";
+import { perPage } from "../config";
 
 const ALL_RESTAURANTS_QUERY = gql`
   query ALL_RESTAURANTS_QUERY($skip: Int = 0,$first:Int = ${perPage}) {
@@ -23,13 +22,13 @@ const ALL_RESTAURANTS_QUERY = gql`
 `;
 
 const Center = styled.div`
-  text-align:center;
-  margin:2%;
+  text-align: center;
+  margin: 2vmax;
 `;
 
 const RestaurantsList = styled.div`
-  margin:0 15%;
-`
+  margin: 0 15vmax;
+`;
 
 class Restaurants extends Component {
   render() {
@@ -41,18 +40,24 @@ class Restaurants extends Component {
           fetchPolicy="network-only"
           variables={{
             skip: this.props.page * perPage - perPage,
-          }}>
+          }}
+        >
           {({ data, error, loading }) => {
-            if (loading) return <p>Loading...</p>
-            if (error) return <p>Error: {error.message}</p>
-            return <RestaurantsList>{data.restaurants.map(restaurant => <Restaurant restaurant={restaurant} key={restaurant.id} />
-            )}</RestaurantsList>
+            if (loading) return <p>Loading...</p>;
+            if (error) return <p>Error: {error.message}</p>;
+            return (
+              <RestaurantsList>
+                {data.restaurants.map((restaurant) => (
+                  <Restaurant restaurant={restaurant} key={restaurant.id} />
+                ))}
+              </RestaurantsList>
+            );
           }}
         </Query>
       </Center>
-    )
+    );
   }
 }
 
 export default Restaurants;
-export { ALL_RESTAURANTS_QUERY }
+export { ALL_RESTAURANTS_QUERY };

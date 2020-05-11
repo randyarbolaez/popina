@@ -6,35 +6,22 @@ import Signout from "./Signout";
 
 const Container = styled.div`
   /* -webkit-clip-path: polygon(0 0, 100% 0, 100% 93%, 0 100%); */
-  /* clip-path: polygon(10% 10%, 94% 10%, 80% 96%, 15% 94%); */
-  margin: 0 10%;
+  clip-path: polygon(4% 30%, 100% 15%, 80% 75%, 15% 94%);
+  margin: 0 10vw;
   text-transform: lowercase;
-  background-color: #f4976c;
+  background-color: #535353;
   display: flex;
   justify-content: space-around;
   text-align: center;
+  align-items: baseline;
   padding: 2%;
-  font-size: 2.7rem;
+  font-size: 2.5vmax;
   a {
-    color: #d2fdff;
+    color: #bbc9dd;
   }
 
   a:hover {
-    color: #fbe8a6;
-  }
-
-  @media (max-width: 768px) {
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-    margin: 0 0;
-
-    a {
-      padding: 5%;
-      color: #d2fdff;
-    }
-  }
-
-  @media (min-width: 1024px) {
-    clip-path: polygon(10% 10%, 94% 10%, 82% 96%, 15% 94%);
+    color: #f1f2f2;
   }
 `;
 
@@ -46,7 +33,7 @@ class Nav extends Component {
           <Container>
             {!me && (
               <Link href="/">
-                <a>Sign Up/In</a>
+                <a>Popina</a>
               </Link>
             )}
             {me && (
@@ -58,9 +45,9 @@ class Nav extends Component {
               <a>Restaurants</a>
             </Link>
             {me && (
-              <div>
+              <>
                 <Signout />
-              </div>
+              </>
             )}
           </Container>
         )}

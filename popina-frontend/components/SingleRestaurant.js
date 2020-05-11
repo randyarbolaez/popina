@@ -16,24 +16,25 @@ const SingleRestaurantStyles = styled.div`
 const RestaurantName = styled.h2``;
 
 const RestaurantMenu = styled.h2`
-  border: 1px solid #f4976c;
+  border: 1px solid #bcbec0;
   border-top: none;
-  margin: 0 40%;
+  border-bottom: none;
+  margin: 0 45vmax;
 `;
 
 const RestaurantLocation = styled.h2`
-  border: 1px solid #f4976c;
+  border: 1px solid #bcbec0;
   border-bottom: none;
-  border-top: none;
-  margin: 0 40%;
+  /* border-top: none; */
+  margin: 0 40vmax;
 `;
 
 const RestaurantDescription = styled.h2`
   justify-content: center;
-  width: 800px;
+  width: 50vmax;
   margin: 0 auto;
   margin-bottom: 4%;
-  border: 1px solid #f4976c;
+  border: 1px solid #bcbec0;
 `;
 
 const RestaurantImg = styled.img`

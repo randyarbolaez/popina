@@ -14,10 +14,19 @@ const Container = styled.div`
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 `;
 
+const Title = styled.h1`
+  color: #4a586e;
+  font-variant: small-caps;
+  font-size: 8vmax;
+  text-align: center;
+  margin: 0;
+`;
+
 class Home extends Component {
   render() {
     return (
       <div>
+        <Title>Popina</Title>
         <User>
           {({ data: { me } }) => (
             <div>
@@ -39,14 +48,5 @@ class Home extends Component {
     );
   }
 }
-
-// <div>
-//   {!me && (
-//     <div>
-//       <Signup />
-//       <Signin />
-//     </div>
-//   )}
-// </div>
 
 export default Home;

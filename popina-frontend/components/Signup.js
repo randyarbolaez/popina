@@ -19,44 +19,41 @@ const SIGNUP_MUTATION = gql`
 const FieldSet = styled.fieldset`
   display: flex;
   text-align: center;
-  border-color: #f4976c;
+  border-left: none;
   border-right: none;
-  padding: 5%;
-  margin: 0 4% 4% 4%;
+  padding: 2vmax;
+  margin: 0 0 4% 0;
+  border-top-left-radius: 15vmax;
+  border-top-right-radius: 15vmax;
   button {
-    background: #ecffff;
-    border: none;
-    border-radius: 5%;
-    font-size: 3.5rem;
-    font-family: "Porton";
-    color: #f4976c;
+    border: 1px solid #1771f1;
+    border-top: none;
+    background: none;
+    border-radius: 30%;
+    font-size: 3vmax;
+    /* font-family: "Porton"; */
+    color: #bdccff;
     margin: auto;
   }
   input {
     background: none;
-    border: 1px solid #f4976c;
+    border: 1px solid #1771f1;
     border-top: none;
-    width: 35%;
+    width: 15vmax;
+    border-radius: 20%;
     text-align: center;
-    height: 30px;
-    font-size: 1.3rem;
+    height: 2vmax;
+    font-size: 1.3vmax;
+    color: #939598;
   }
 `;
 
-const FormTitle = styled.h2`
-  border: 1px solid #f4976c;
-  border-bottom: none;
-  /* padding: 2%; */
-  margin: 0 30%;
-  /* color:#f4976c; */
-`;
-
 const FormSubTitle = styled.p`
-  border: 1px solid #f4976c;
+  /* border: 1px solid #e5f0ff; */
   border-bottom: none;
-  /* padding: 2%; */
   margin: 0 30%;
-  color: #f4976c;
+  color: #7eb3ff;
+  font-size: 1.2vmax;
 `;
 
 class Signup extends Component {
@@ -90,7 +87,6 @@ class Signup extends Component {
               }}
             >
               <FieldSet disabled={loading}>
-                <FormTitle>Sign Up for an account</FormTitle>
                 {error && <p onError={error}>Error</p>}
                 <label htmlFor="Columns">
                   <FormSubTitle>username</FormSubTitle>
